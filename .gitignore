@@ -1,0 +1,36 @@
+# IntelliJ IDEA specific files
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Gradle build files
+.gradle/
+build/
+
+# Local configuration files
+*.properties
+*.keystore
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Build output directories
+**/target/
+**/bin/
+
+# Dependency directories
+**/libs/
+**/dependencies/
+
+# Cache directories
+**/.cache/
+**/.settings/
+
+# Kotlin specific
+**/*.kt.bak
