@@ -1,0 +1,16 @@
+ java.util.concurrent.ForkJoinWorkerThread.run 100ms
+  java.util.concurrent.ForkJoinPool.runWorker 100ms
+   java.util.concurrent.ForkJoinPool.scan 100ms
+    java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec 100ms
+     java.util.concurrent.ForkJoinTask.doExec 100ms
+      java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec 100ms
+       com.intellij.idea.IdeStarterKt$postOpenUiTasks$1.run 100ms
+        com.intellij.ui.mac.touchbar.TouchbarSupport.onApplicationLoaded 100ms
+         com.intellij.ui.mac.touchbar.TouchbarSupport.initialize 100ms
+          com.intellij.ui.mac.touchbar.NST.loadLibrary 100ms
+           com.intellij.ui.mac.touchbar.NST.loadLibraryImpl 100ms
+            com.sun.jna.Native.load 100ms
+             com.sun.jna.Library$Handler.<init> 100ms
+              com.sun.jna.NativeLibrary.getInstance 100ms
+               com.sun.jna.NativeLibrary.loadLibrary 100ms
+                com.sun.jna.Native.open 100ms

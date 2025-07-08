@@ -1,0 +1,102 @@
+<html><head><title>Indexing diagnostics of &#39;doc&#39;</title><style>body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table {
+  width: 80%;
+}
+
+table.two-columns td {
+  width: 50%;
+}
+
+th, td {
+  padding: 3px;
+}
+
+th {
+  background: lightgrey;
+}
+
+td {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+        
+.stats-content {
+  margin-left: 20%;
+}
+
+.aggregate-report-content {
+  margin-left: 10%;
+}
+
+.navigation-bar {
+  width: 15%;
+  background-color: lightgrey;
+  position: fixed;
+  height: 100%;
+}
+
+div.navigation-bar ul {
+  list-style-type: none;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+}
+
+div.navigation-bar ul li a, label {
+  display: block;
+  color: #000;
+  padding: 8px 20px;
+  text-decoration: none;
+}
+
+label input {
+  margin-left: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+div.navigation-bar ul li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+.minor-data {}
+
+.invisible {
+  display: none;
+}
+
+.jetbrains-logo {
+  width: 50%;
+  bottom: 5%;
+  position: absolute;
+  left: 20%;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.linkable-table-row:hover {
+  background: #f2f3ff;
+  outline: none;
+  cursor: pointer;
+}</style><script>document.addEventListener("DOMContentLoaded", () => {
+  const rows = document.getElementsByClassName("linkable-table-row")
+  for (const row of rows) {
+    const href = row.getAttribute("href")
+    row.addEventListener("click", () => {
+      window.open(href, "_blank");
+    });
+  }
+});</script></head><body><div class="aggregate-report-content"><h1>Project name</h1>doc<div><h1>Indexing history</h1><table class="centered-text"><caption style="caption-side: bottom; text-align: right; font-size: 14px">Hover for details</caption><thead><tr><th colspan="7">Time</th><th colspan="6">Files</th><th rowspan="2">IDE</th><th rowspan="2">Type</th></tr><tr><th>Started</th><th>Total</th><th>Creating iterators</th><th>Scanning</th><th>Indexing</th><th>Content loading</th><th>Finished</th><th>Providers</th><th>Scanned</th><th>Shared indexes (w/o content loading)</th><th>Scheduled for indexing</th><th>Shared indexes (content loaded)</th><th>Total indexed (shared indexes included)</th></tr></thead><tbody><tr class="linkable-table-row" href="diagnostic-2025-07-08-15-14-01.390.html"><td><strong>On project open</strong><br/>15:14:00 08 7月</td><td>946 ms</td><td>2 ms</td><td>775 ms</td><td>24 ms</td><td>2 ms</td><td>15:14:01 08 7月</td><td>5</td><td>284</td><td>0</td><td>1</td><td>0</td><td>1</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-15-11-36.636.html"><td><strong>On project open</strong><br/>15:11:35 08 7月</td><td>925 ms</td><td>3 ms</td><td>743 ms</td><td>21 ms</td><td>2 ms</td><td>15:11:36 08 7月</td><td>5</td><td>284</td><td>0</td><td>1</td><td>0</td><td>1</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-15-09-53.491.html"><td><strong>On project open</strong><br/>15:09:52 08 7月</td><td>1 s 135 ms</td><td>2 ms</td><td>957 ms</td><td>26 ms</td><td>4 ms</td><td>15:09:53 08 7月</td><td>5</td><td>284</td><td>0</td><td>1</td><td>0</td><td>1</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-15-08-05.295.html"><td><strong>On project open</strong><br/>15:08:04 08 7月</td><td>941 ms</td><td>2 ms</td><td>779 ms</td><td>20 ms</td><td>3 ms</td><td>15:08:05 08 7月</td><td>5</td><td>284</td><td>0</td><td>1</td><td>0</td><td>1</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-15-05-35.669.html"><td><strong>On project open</strong><br/>15:05:34 08 7月</td><td>1 s 441 ms</td><td>6 ms</td><td>1 s 160 ms</td><td>23 ms</td><td>3 ms</td><td>15:05:35 08 7月</td><td>5</td><td>284</td><td>0</td><td>1</td><td>0</td><td>1</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-15-04-31.711.html"><td><strong>On project open</strong><br/>15:04:30 08 7月</td><td>938 ms</td><td>3 ms</td><td>769 ms</td><td>23 ms</td><td>5 ms</td><td>15:04:31 08 7月</td><td>5</td><td>284</td><td>0</td><td>1</td><td>0</td><td>1</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-15-04-01.099.html"><td><strong>On project open</strong><br/>15:04:00 08 7月</td><td>1 s 39 ms</td><td>3 ms</td><td>836 ms</td><td>39 ms</td><td>5 ms</td><td>15:04:01 08 7月</td><td>5</td><td>284</td><td>0</td><td>1</td><td>0</td><td>1</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-14-58-56.498.html"><td><strong>On project open</strong><br/>14:58:55 08 7月</td><td>1 s 94 ms</td><td>11 ms</td><td>900 ms</td><td>28 ms</td><td>4 ms</td><td>14:58:56 08 7月</td><td>5</td><td>284</td><td>0</td><td>1</td><td>0</td><td>1</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-14-49-34.713.html"><td><strong>On project open</strong><br/>14:49:33 08 7月</td><td>1 s 140 ms</td><td>5 ms</td><td>852 ms</td><td>32 ms</td><td>7 ms</td><td>14:49:34 08 7月</td><td>5</td><td>284</td><td>0</td><td>1</td><td>0</td><td>1</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-14-48-23.339.html"><td><strong>On project open</strong><br/>14:48:22 08 7月</td><td>846 ms</td><td>3 ms</td><td>671 ms</td><td>31 ms</td><td>5 ms</td><td>14:48:23 08 7月</td><td>5</td><td>284</td><td>0</td><td>1</td><td>0</td><td>1</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-14-47-54.660.html"><td><strong>On project open</strong><br/>14:47:53 08 7月</td><td>1 s 194 ms</td><td>11 ms</td><td>997 ms</td><td>29 ms</td><td>4 ms</td><td>14:47:54 08 7月</td><td>5</td><td>284</td><td>0</td><td>1</td><td>0</td><td>1</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-14-42-41.345.html"><td><strong>On project open</strong><br/>14:42:40 08 7月</td><td>1 s 63 ms</td><td>3 ms</td><td>874 ms</td><td>26 ms</td><td>5 ms</td><td>14:42:41 08 7月</td><td>5</td><td>284</td><td>0</td><td>1</td><td>0</td><td>1</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-14-41-44.974.html"><td><strong>On project open</strong><br/>14:41:43 08 7月</td><td>1 s 89 ms</td><td>3 ms</td><td>863 ms</td><td>24 ms</td><td>3 ms</td><td>14:41:44 08 7月</td><td>5</td><td>284</td><td>0</td><td>1</td><td>0</td><td>1</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-14-36-39.128.html"><td><strong>On project open</strong><br/>14:36:38 08 7月</td><td>1 s 109 ms</td><td>21 ms</td><td>859 ms</td><td>24 ms</td><td>7 ms</td><td>14:36:39 08 7月</td><td>5</td><td>284</td><td>0</td><td>1</td><td>0</td><td>1</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-14-35-25.265.html"><td><strong>On project open</strong><br/>14:35:24 08 7月</td><td>1 s 254 ms</td><td>5 ms</td><td>838 ms</td><td>265 ms</td><td>4 ms</td><td>14:35:25 08 7月</td><td>5</td><td>284</td><td>0</td><td>2</td><td>0</td><td>2</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-14-07-46.388.html"><td><strong>On project open</strong><br/>14:07:44 08 7月</td><td>1 s 623 ms</td><td>9 ms</td><td>1 s 312 ms</td><td>72 ms</td><td>6 ms</td><td>14:07:46 08 7月</td><td>5</td><td>284</td><td>0</td><td>1</td><td>0</td><td>1</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-14-05-46.598.html"><td><strong>On project open</strong><br/>14:05:45 08 7月</td><td>1 s 88 ms</td><td>3 ms</td><td>850 ms</td><td>28 ms</td><td>7 ms</td><td>14:05:46 08 7月</td><td>5</td><td>284</td><td>0</td><td>1</td><td>0</td><td>1</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-13-59-46.930.html"><td><strong>On project open</strong><br/>13:59:45 08 7月</td><td>1 s 470 ms</td><td>4 ms</td><td>1 s 179 ms</td><td>66 ms</td><td>3 ms</td><td>13:59:46 08 7月</td><td>5</td><td>284</td><td>0</td><td>1</td><td>0</td><td>1</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-13-58-36.246.html"><td><strong>On project open</strong><br/>13:58:35 08 7月</td><td>1 s 103 ms</td><td>8 ms</td><td>862 ms</td><td>0</td><td>0</td><td>13:58:36 08 7月</td><td>5</td><td>284</td><td>0</td><td>0</td><td>0</td><td>0</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-11-24-32.967.html"><td><strong>On project open</strong><br/>11:24:31 08 7月</td><td>1 s 89 ms</td><td>2 ms</td><td>882 ms</td><td>0</td><td>0</td><td>11:24:32 08 7月</td><td>5</td><td>284</td><td>0</td><td>0</td><td>0</td><td>0</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-11-09-53.627.html"><td><strong>On project open</strong><br/>11:09:52 08 7月</td><td>1 s 23 ms</td><td>5 ms</td><td>871 ms</td><td>0</td><td>0</td><td>11:09:53 08 7月</td><td>5</td><td>284</td><td>0</td><td>0</td><td>0</td><td>0</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-11-04-58.003.html"><td><strong>On project open</strong><br/>11:04:56 08 7月</td><td>1 s 137 ms</td><td>20 ms</td><td>902 ms</td><td>0</td><td>0</td><td>11:04:57 08 7月</td><td>5</td><td>284</td><td>0</td><td>0</td><td>0</td><td>0</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-10-46-34.957.html"><td><strong>On project open</strong><br/>10:46:33 08 7月</td><td>1 s 253 ms</td><td>5 ms</td><td>957 ms</td><td>0</td><td>0</td><td>10:46:34 08 7月</td><td>5</td><td>284</td><td>0</td><td>0</td><td>0</td><td>0</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-10-45-54.763.html"><td><strong>On project open</strong><br/>10:45:53 08 7月</td><td>1 s 81 ms</td><td>3 ms</td><td>923 ms</td><td>0</td><td>0</td><td>10:45:54 08 7月</td><td>5</td><td>284</td><td>0</td><td>0</td><td>0</td><td>0</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-10-37-38.894.html"><td><strong>On project open</strong><br/>10:37:38 08 7月</td><td>887 ms</td><td>3 ms</td><td>717 ms</td><td>0</td><td>0</td><td>10:37:38 08 7月</td><td>5</td><td>284</td><td>0</td><td>0</td><td>0</td><td>0</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-10-33-38.285.html"><td><strong>On project open</strong><br/>10:33:36 08 7月</td><td>1 s 431 ms</td><td>5 ms</td><td>1 s 227 ms</td><td>0</td><td>0</td><td>10:33:38 08 7月</td><td>5</td><td>284</td><td>0</td><td>0</td><td>0</td><td>0</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-10-29-10.873.html"><td><strong>On project open</strong><br/>10:29:08 08 7月</td><td>2 s 483 ms</td><td>15 ms</td><td>2 s 111 ms</td><td>0</td><td>0</td><td>10:29:10 08 7月</td><td>5</td><td>284</td><td>0</td><td>0</td><td>0</td><td>0</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-10-17-38.543.html"><td><strong>On project open</strong><br/>10:17:37 08 7月</td><td>1 s 169 ms</td><td>3 ms</td><td>928 ms</td><td>0</td><td>0</td><td>10:17:38 08 7月</td><td>5</td><td>284</td><td>0</td><td>0</td><td>0</td><td>0</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-10-14-32.487.html"><td><strong>On project open</strong><br/>10:14:31 08 7月</td><td>1 s 142 ms</td><td>6 ms</td><td>833 ms</td><td>0</td><td>0</td><td>10:14:32 08 7月</td><td>5</td><td>284</td><td>0</td><td>0</td><td>0</td><td>0</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-10-09-15.990.html"><td><strong>On project open</strong><br/>10:09:14 08 7月</td><td>1 s 178 ms</td><td>3 ms</td><td>973 ms</td><td>0</td><td>0</td><td>10:09:15 08 7月</td><td>5</td><td>284</td><td>0</td><td>0</td><td>0</td><td>0</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-10-06-56.881.html"><td><strong>On project open</strong><br/>10:06:55 08 7月</td><td>1 s 91 ms</td><td>21 ms</td><td>841 ms</td><td>0</td><td>0</td><td>10:06:56 08 7月</td><td>5</td><td>284</td><td>0</td><td>0</td><td>0</td><td>0</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-10-02-49.347.html"><td><strong>On project open</strong><br/>10:02:48 08 7月</td><td>1 s 146 ms</td><td>5 ms</td><td>912 ms</td><td>0</td><td>0</td><td>10:02:49 08 7月</td><td>5</td><td>284</td><td>0</td><td>0</td><td>0</td><td>0</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-09-56-30.721.html"><td><strong>On project open</strong><br/>09:56:28 08 7月</td><td>1 s 792 ms</td><td>5 ms</td><td>1 s 467 ms</td><td>0</td><td>0</td><td>09:56:30 08 7月</td><td>5</td><td>284</td><td>0</td><td>0</td><td>0</td><td>0</td><td>IC-222.3345.118</td><td>full on project open</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-09-53-07.409.html"><td><strong>changes in: &quot;Module &#39;doc&#39; (doc)&quot;</strong><br/>09:53:07 08 7月</td><td>227 ms</td><td>&lt; 1 ms</td><td>36 ms</td><td>171 ms</td><td>4 ms</td><td>09:53:07 08 7月</td><td>1</td><td>51</td><td>0</td><td>3</td><td>0</td><td>3</td><td>IC-222.3345.118</td><td>partial</td></tr><tr class="linkable-table-row" href="diagnostic-2025-07-08-09-52-57.598.html"><td><strong>On project open</strong><br/>09:52:54 08 7月</td><td>3 s 495 ms</td><td>4 ms</td><td>1 s 47 ms</td><td>2 s 129 ms</td><td>119 ms</td><td>09:52:57 08 7月</td><td>5</td><td>278</td><td>0</td><td>272</td><td>0</td><td>272</td><td>IC-222.3345.118</td><td>full on project open</td></tr></tbody></table></div><div><h1>Scanning to push properties of changed files</h1><table><thead><tr><th>Time</th><th>Reason</th><th>Full duration</th><th>Is cancelled</th><th>Number</th></tr></thead><tbody><tr><td>09:52:59 08 7月</td><td>Push on VFS changes</td><td>5 ms</td><td>fully finished</td><td>1</td></tr></tbody></table></div></div></body></html>

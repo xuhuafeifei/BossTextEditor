@@ -1,0 +1,20 @@
+<idea-plugin>
+  <change-notes>Initial version of the plugin.</change-notes>
+  <idea-version since-build="222.3345" until-build="222.*" />
+  <id>com.fgbg.writethought</id>
+  <name>Write Your Thought</name>
+  <version>1.0-SNAPSHOT</version>
+  <vendor email="support@fgbg.com" url="http://fgbg.com">FGBG</vendor>
+  <description><![CDATA[A plugin that allows you to write novels in IntelliJ IDEA.]]></description>
+  <depends>com.intellij.modules.platform</depends>
+  <depends>org.intellij.plugins.markdown</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <applicationConfigurable parentId="tools" instance="com.fgbg.setting.SettingsConfigurable" displayName="Write Your Thought Settings" />
+    <applicationService serviceImplementation="com.fgbg.setting.SettingsState" />
+  </extensions>
+  <actions>
+    <action id="WriteThoughtAction" class="com.fgbg.action.WriteThoughtAction" text="写你所想" description="Open markdown editor for writing">
+      <add-to-group group-id="EditorPopupMenu" anchor="last" />
+    </action>
+  </actions>
+</idea-plugin>

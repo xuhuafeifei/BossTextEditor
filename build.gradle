@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '1.15.0'
+    id 'org.jetbrains.kotlin.jvm' version '2.1.20'
+}
+
+group 'com.xhf'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+intellij {
+    version = '2022.2'
+    plugins = ['java', 'org.jetbrains.kotlin']
+    plugins = ["org.intellij.plugins.markdown"]
+}
+
+tasks {
+    patchPluginXml {
+        changeNotes = """
+        Initial version of the plugin.
+        """
+    }
+}
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+}

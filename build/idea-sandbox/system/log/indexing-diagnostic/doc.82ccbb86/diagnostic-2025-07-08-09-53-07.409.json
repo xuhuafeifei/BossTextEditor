@@ -1,0 +1,171 @@
+{
+  "appInfo" : {
+    "build" : "222.3345.118",
+    "buildDate" : "2022-07-26T05:01:05.177Z[UTC]",
+    "productCode" : "IC",
+    "generated" : "2025-07-08T01:53:07.409397Z",
+    "os" : "macOS 15.4.1",
+    "runtime" : "JetBrains s.r.o. 17.0.3 17.0.3+7-b469.32"
+  },
+  "runtimeInfo" : {
+    "maxMemory" : 786432000,
+    "numberOfProcessors" : 8,
+    "maxNumberOfIndexingThreads" : 4,
+    "maxSizeOfFileForIntelliSense" : 2560000,
+    "maxSizeOfFileForContentLoading" : 20971520
+  },
+  "projectIndexingHistory" : {
+    "projectName" : "doc",
+    "times" : {
+      "indexingReason" : "changes in: \"Module 'doc' (doc)\"",
+      "scanningType" : "PARTIAL",
+      "totalUpdatingTime" : 227115528,
+      "indexingTime" : 171694000,
+      "contentLoadingVisibleTime" : 4072854,
+      "creatingIteratorsTime" : 15000,
+      "scanFilesTime" : 36730000,
+      "pushPropertiesTime" : 21000,
+      "indexExtensionsTime" : 0,
+      "isAppliedAllValuesSeparately" : true,
+      "separateApplyingIndexesVisibleTime" : 4528066,
+      "updatingStart" : "2025-07-08T01:53:07.180244Z",
+      "updatingEnd" : "2025-07-08T01:53:07.407354Z",
+      "totalSuspendedTime" : 0,
+      "wasInterrupted" : false
+    },
+    "fileCount" : {
+      "numberOfFileProviders" : 1,
+      "numberOfScannedFiles" : 51,
+      "numberOfFilesIndexedByInfrastructureExtensionsDuringScan" : 0,
+      "numberOfFilesScheduledForIndexingAfterScan" : 3,
+      "numberOfFilesIndexedByInfrastructureExtensionsDuringIndexingStage" : 0,
+      "numberOfFilesIndexedWithLoadingContent" : 3
+    },
+    "totalStatsPerFileType" : [ {
+      "fileType" : "JAVA",
+      "partOfTotalProcessingTime" : {
+        "part" : 409745346,
+        "total" : 409745346
+      },
+      "partOfTotalContentLoadingTime" : {
+        "part" : 9782138,
+        "total" : 9782138
+      },
+      "totalNumberOfFiles" : 3,
+      "totalFilesSize" : 14091,
+      "indexingSpeed" : {
+        "totalBytes" : 14091,
+        "totalTime" : 409745346
+      },
+      "biggestContributors" : [ {
+        "providerName" : "Module 'doc' (doc)",
+        "numberOfFiles" : 3,
+        "totalFilesSize" : 14091,
+        "partOfTotalProcessingTimeOfThisFileType" : {
+          "part" : 409745346,
+          "total" : 409745346
+        }
+      } ]
+    } ],
+    "totalStatsPerIndexer" : [ {
+      "indexId" : "java.fun.expression",
+      "partOfTotalIndexingTime" : {
+        "part" : 111433636,
+        "total" : 310554429
+      },
+      "totalNumberOfFiles" : 3,
+      "totalNumberOfFilesIndexedByExtensions" : 0,
+      "totalFilesSize" : 14091,
+      "indexingSpeed" : {
+        "totalBytes" : 14091,
+        "totalTime" : 111433636
+      },
+      "snapshotInputMappingStats" : {
+        "totalRequests" : 0,
+        "totalMisses" : 0,
+        "totalHits" : 0
+      }
+    }, {
+      "indexId" : "Stubs",
+      "partOfTotalIndexingTime" : {
+        "part" : 97508357,
+        "total" : 310554429
+      },
+      "totalNumberOfFiles" : 3,
+      "totalNumberOfFilesIndexedByExtensions" : 0,
+      "totalFilesSize" : 14091,
+      "indexingSpeed" : {
+        "totalBytes" : 14091,
+        "totalTime" : 97508357
+      },
+      "snapshotInputMappingStats" : {
+        "totalRequests" : 0,
+        "totalMisses" : 0,
+        "totalHits" : 0
+      }
+    }, {
+      "indexId" : "java.null.method.argument",
+      "partOfTotalIndexingTime" : {
+        "part" : 89393125,
+        "total" : 310554429
+      },
+      "totalNumberOfFiles" : 3,
+      "totalNumberOfFilesIndexedByExtensions" : 0,
+      "totalFilesSize" : 14091,
+      "indexingSpeed" : {
+        "totalBytes" : 14091,
+        "totalTime" : 89393125
+      },
+      "snapshotInputMappingStats" : {
+        "totalRequests" : 0,
+        "totalMisses" : 0,
+        "totalHits" : 0
+      }
+    }, {
+      "indexId" : "java.binary.plus.expression",
+      "partOfTotalIndexingTime" : {
+        "part" : 12219311,
+        "total" : 310554429
+      },
+      "totalNumberOfFiles" : 3,
+      "totalNumberOfFilesIndexedByExtensions" : 0,
+      "totalFilesSize" : 14091,
+      "indexingSpeed" : {
+        "totalBytes" : 14091,
+        "totalTime" : 12219311
+      },
+      "snapshotInputMappingStats" : {
+        "totalRequests" : 0,
+        "totalMisses" : 0,
+        "totalHits" : 0
+      }
+    } ],
+    "scanningStatistics" : [ {
+      "providerName" : "Module 'doc' (doc)",
+      "numberOfScannedFiles" : 51,
+      "numberOfSkippedFiles" : 0,
+      "numberOfFilesForIndexing" : 3,
+      "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
+      "filesFullyIndexedByInfrastructureExtensions" : [ ],
+      "statusTime" : 2233641,
+      "scanningTime" : 11303474,
+      "timeProcessingUpToDateFiles" : 0,
+      "timeUpdatingContentLessIndexes" : 16972,
+      "timeIndexingWithoutContent" : 114959,
+      "roots" : [ ]
+    } ],
+    "fileProviderStatistics" : [ {
+      "providerName" : "Module 'doc' (doc)",
+      "totalNumberOfIndexedFiles" : 3,
+      "totalNumberOfFilesFullyIndexedByExtensions" : 0,
+      "totalIndexingVisibleTime" : 170600063,
+      "contentLoadingVisibleTime" : 4072854,
+      "numberOfTooLargeForIndexingFiles" : 0,
+      "slowIndexedFiles" : [ ],
+      "filesFullyIndexedByExtensions" : [ ],
+      "isAppliedAllValuesSeparately" : true,
+      "separateApplyingIndexesVisibleTime" : 4528066
+    } ],
+    "visibleTimeToAllThreadTimeRatio" : 0.41635631658888933
+  }
+}
