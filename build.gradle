@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'org.jetbrains.intellij' version '1.15.0'
-    id 'org.jetbrains.kotlin.jvm' version '2.1.20'
+    id 'org.jetbrains.kotlin.jvm' version '1.9.20'
 }
 
 group 'com.xhf'
@@ -17,13 +17,42 @@ intellij {
     plugins = ["org.intellij.plugins.markdown"]
 }
 
+// 统一JVM目标版本配置
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17) // 统一使用Java 17
+    }
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+patchPluginXml {
+    sinceBuild = '222.1'
+    untilBuild = '243.*'
+}
+
 tasks {
     patchPluginXml {
         changeNotes = """
         Initial version of the plugin.
         """
     }
+
+    // 配置搜索选项任务
+    buildSearchableOptions {
+        maxHeapSize = "2g"
+        jvmArgs = ["-Xmx2048m", "-Djava.awt.headless=true"]
+    }
+
+    // 确保Java和Kotlin编译版本一致
+    compileKotlin {
+        kotlinOptions.jvmTarget = "17"
+    }
+    compileTestKotlin {
+        kotlinOptions.jvmTarget = "17"
+    }
 }
+
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.20" // 版本对齐
 }
