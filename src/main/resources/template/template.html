@@ -16,15 +16,24 @@
 </div>
 
 <script>
+    let preContent = "";
+
     window.getMarkdownContent = () => {
         return vditor.getValue();
     };
 
     function saveContent() {
         const content = getMarkdownContent();
+        if (content === preContent) {
+            return;
+        }
         // 发送给 Java 层
         window.javaBridge?.postMessage(content);
     }
+    // 开启定时调度器, 定时保存内容
+    setInterval(() => {
+        saveContent();
+    }, 1000 * 10); // 10 s保存一次
 </script>
 
 <!-- Vditor JS -->
