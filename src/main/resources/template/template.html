@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Vditor 官网仿真 Demo</title>
+    <!-- Vditor 样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/vditor/dist/index.css" />
+    <!-- 自定义字体 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap" />
+    <style id="ideaStyle">
+        {{style}}
+    </style>
+</head>
+<body>
+
+<div class="editor-container">
+    <div id="vditor" class="vditor vditor--fullscreen"></div>
+</div>
+
+<!-- Vditor JS -->
+<script src="https://unpkg.com/vditor/dist/index.min.js"></script>
+<script>
+    const vditor = new Vditor('vditor', {
+        mode: 'wysiwyg', // 初始为所见即所得
+        outline: {
+            position: 'left', // 展示在左边
+        },
+        toolbarConfig: {
+            hide: false,
+            pin: true,
+        },
+        theme: "{{theme}}",
+        toolbar: [
+            'headings', 'bold', 'italic', 'strike', '|',
+            'list', 'ordered-list', 'check', '|',
+            'quote', 'line', 'code', 'inline-code', '|',
+            'table', 'link', 'image', 'emoji', '|',
+            'undo', 'redo', '|',
+            'outline', 'edit-mode', 'both', 'fullscreen',
+        ],
+        cache: { enable: false },
+        value: `{{value}}`,
+    });
+</script>
+
+</body>
+</html>
