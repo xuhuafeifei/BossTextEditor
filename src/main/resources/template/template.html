@@ -12,7 +12,20 @@
 
 <div class="editor-container">
     <div id="vditor" class="vditor vditor--fullscreen"></div>
+    <button onclick="saveContent()" style="position:fixed;bottom:10px;right:10px;z-index:999;">保存</button>
 </div>
+
+<script>
+    window.getMarkdownContent = () => {
+        return vditor.getValue();
+    };
+
+    function saveContent() {
+        const content = getMarkdownContent();
+        // 发送给 Java 层
+        window.javaBridge?.postMessage(content);
+    }
+</script>
 
 <!-- Vditor JS -->
 <script src="https://unpkg.com/vditor/dist/index.min.js"></script>
