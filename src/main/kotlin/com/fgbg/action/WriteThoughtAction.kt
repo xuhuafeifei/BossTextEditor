@@ -10,6 +10,7 @@ import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.ui.ColorUtil
 import com.intellij.ui.jcef.JCEFHtmlPanel
+import java.awt.Dimension
 import javax.swing.JComponent
 import javax.swing.JDialog
 import javax.swing.JPanel
@@ -41,25 +42,29 @@ class MarkdownWindow(val project: Project, val file: VirtualFile) : JDialog() {
     init {
         val fileContent = file.inputStream.bufferedReader().readText()
         // 读取模板内容, 写入Vditor框架
-        val html = javaClass.classLoader.getResourceAsStream("template/template.html")?.use { stream ->
+        var html = javaClass.classLoader.getResourceAsStream("template/template.html")?.use { stream ->
             stream.bufferedReader().readText()
                 .replace("{{value}}", fileContent)
-                .apply {
-                    val theme = getVditorTheme()
-                    replace("{{theme}}", theme)
-                    if (theme == "dark") {
-                        replace("{{style}}", ".vditor--dark{--panel-background-color:rgba(43,43,43,1.00);--textarea-background-color:rgba(43,43,43,1.00);--toolbar-background-color:rgba(60,63,65,1.00);}::-webkit-scrollbar-track {background-color:rgba(43,43,43,1.00);}::-webkit-scrollbar-thumb {background-color:rgba(166,166,166,0.28);}.vditor-reset {font-size:16px;font-family:\"JetBrains Mono\",\"Helvetica Neue\",\"Luxi Sans\",\"DejaVu Sans\",\"Hiragino Sans GB\",\"Microsoft Yahei\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Noto Color Emoji\",\"Segoe UI Symbol\",\"Android Emoji\",\"EmojiSymbols\";color:rgba(169,183,198,1.00);} body{background-color: rgba(43,43,43,1.00);}.vditor-reset a {color: rgba(30, 136, 234);}")
-                    } else {
-                        replace("{{style}}", "")
-                    }
-                }
         } ?: "<html><body><h1>Template not found</h1></body></html>"
+
+        val theme = getVditorTheme()
+        html = html.replace("{{theme}}", theme)
+        if (theme == "dark") {
+            html = html.replace("{{css}}", getDarkCss())
+        } else {
+            html = html.replace("{{css}}", "")
+        }
 
         jcefHtmlPanel.loadHTML(html)
         add(jcefHtmlPanel.component)
         pack()
+        size = Dimension( 500, 400)
         setLocationRelativeTo(null)
         isVisible = true
+    }
+
+    private fun getDarkCss(): String {
+        return "<style id=\"ideaStyle\">.vditor--dark{--panel-background-color:rgba(43,43,43,1.00);--textarea-background-color:rgba(43,43,43,1.00);--toolbar-background-color:rgba(60,63,65,1.00);}::-webkit-scrollbar-track {background-color:rgba(43,43,43,1.00);}::-webkit-scrollbar-thumb {background-color:rgba(166,166,166,0.28);}.vditor-reset {font-size:16px;font-family:\"JetBrains Mono\",\"Helvetica Neue\",\"Luxi Sans\",\"DejaVu Sans\",\"Hiragino Sans GB\",\"Microsoft Yahei\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Noto Color Emoji\",\"Segoe UI Symbol\",\"Android Emoji\",\"EmojiSymbols\";color:rgba(169,183,198,1.00);} body{background-color: rgba(43,43,43,1.00);}.vditor-reset a {color: rgba(30, 136, 234);}</style>"
     }
 
     fun getVditorTheme(): String {
