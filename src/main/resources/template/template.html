@@ -30,10 +30,18 @@
         // 发送给 Java 层
         window.javaBridge?.postMessage(content);
     }
+    /*
     // 开启定时调度器, 定时保存内容
-    setInterval(() => {
+    let timer = setInterval(() => {
         saveContent();
     }, 1000 * 10); // 10 s保存一次
+
+    function clearTimer() {
+        clearInterval(timer);
+        timer = null;
+    }
+     */
+
 </script>
 
 <!-- Vditor JS -->
@@ -58,6 +66,10 @@
             'outline', 'edit-mode', 'both', 'fullscreen',
         ],
         cache: { enable: false },
+        counter: {
+            enable: true,
+            type: 'text'
+        },
         value: `{{value}}`,
     });
 </script>

@@ -10,20 +10,15 @@ import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.ui.ColorUtil
-import com.intellij.ui.jcef.JBCefBrowser
 import com.intellij.ui.jcef.JBCefBrowserBase
 import com.intellij.ui.jcef.JBCefJSQuery
 import com.intellij.ui.jcef.JCEFHtmlPanel
 import org.cef.browser.CefBrowser
 import org.cef.browser.CefFrame
-import org.cef.browser.CefMessageRouter
-import org.cef.callback.CefQueryCallback
 import org.cef.handler.CefLoadHandlerAdapter
-import org.cef.handler.CefMessageRouterHandlerAdapter
 import java.awt.Dimension
-import javax.swing.JComponent
 import javax.swing.JDialog
-import javax.swing.JPanel
+import javax.swing.Timer
 
 class WriteThoughtAction : AnAction() {
     override fun actionPerformed(e: AnActionEvent) {
@@ -45,12 +40,15 @@ class WriteThoughtAction : AnAction() {
     }
 }
 
-class MarkdownWindow(val project: Project, val file: VirtualFile) : JDialog() {
+class MarkdownWindow(val project: Project, val file: VirtualFile) : JDialog(){
     private val jcefHtmlPanel: JCEFHtmlPanel = JCEFHtmlPanel("url")
+    private lateinit var timer: Timer
     val jsQuery = JBCefJSQuery.create(jcefHtmlPanel as JBCefBrowserBase)
 
 
     init {
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE)
+
         val fileContent = file.inputStream.bufferedReader().readText()
         // 读取模板内容, 写入Vditor框架
         var html = javaClass.classLoader.getResourceAsStream("template/template.html")?.use { stream ->
@@ -68,10 +66,7 @@ class MarkdownWindow(val project: Project, val file: VirtualFile) : JDialog() {
 
         // 注册回调处理函数
         jsQuery.addHandler { message ->
-            println("✅ 收到来自 JS 的消息: $message")
-
             runWriteCommand(project) {
-                // 你可以选择写入 VirtualFile
                 file.setBinaryContent(message.toByteArray())
             }
 
@@ -94,10 +89,17 @@ class MarkdownWindow(val project: Project, val file: VirtualFile) : JDialog() {
             override fun onLoadEnd(browser: CefBrowser?, frame: CefFrame?, httpStatusCode: Int) {
                 if (frame?.isMain == true) {
                     browser?.executeJavaScript(injectJS, browser.url, 0)
+                    timer = Timer(1000 * 10, {
+                        jcefHtmlPanel.cefBrowser.executeJavaScript(
+                            "saveContent()",
+                            jcefHtmlPanel.cefBrowser.url,
+                            42
+                        )
+                    })
+                    timer.start()
                 }
             }
         }, jcefHtmlPanel.cefBrowser)
-
 
         add(jcefHtmlPanel.component)
         pack()
@@ -130,5 +132,13 @@ class MarkdownWindow(val project: Project, val file: VirtualFile) : JDialog() {
             "light"
         }
         return vditorTheme
+    }
+
+    override fun dispose() {
+        timer.stop()
+        super.dispose()
+        jcefHtmlPanel.jbCefClient.cefClient.dispose()
+        jsQuery.dispose()
+        jcefHtmlPanel.dispose()
     }
 }
