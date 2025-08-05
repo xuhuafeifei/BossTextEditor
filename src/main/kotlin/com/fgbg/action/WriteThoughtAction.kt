@@ -10,6 +10,7 @@ import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.ui.ColorUtil
+import com.intellij.ui.JBSplitter
 import com.intellij.ui.jcef.JBCefBrowserBase
 import com.intellij.ui.jcef.JBCefJSQuery
 import com.intellij.ui.jcef.JCEFHtmlPanel
@@ -49,7 +50,7 @@ class MarkdownWindow(val project: Project, val file: VirtualFile) : JDialog(){
     init {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE)
 
-        val fileContent = file.inputStream.bufferedReader().readText()
+        val fileContent = file.inputStream.bufferedReader().readText().replace("`", "\\`")
         // 读取模板内容, 写入Vditor框架
         var html = javaClass.classLoader.getResourceAsStream("template/template.html")?.use { stream ->
             stream.bufferedReader().readText()
@@ -100,6 +101,10 @@ class MarkdownWindow(val project: Project, val file: VirtualFile) : JDialog(){
                 }
             }
         }, jcefHtmlPanel.cefBrowser)
+
+        val splitter = JBSplitter(true, 0.95f)
+        splitter.firstComponent = jcefHtmlPanel.component
+        splitter.secondComponent = JBSplitter(false, 0.5f)
 
         add(jcefHtmlPanel.component)
         pack()
