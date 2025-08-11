@@ -131,19 +131,15 @@ class MarkdownWindow(val project: Project, val file: VirtualFile) : JDialog(){
         val defaultBackground = globalScheme.defaultBackground
 
         // 判断主题类型
-        val vditorTheme = if (ColorUtil.isDark(defaultBackground)) {
+        return if (ColorUtil.isDark(defaultBackground)) {
             "dark"
         } else {
             "light"
         }
-        return vditorTheme
     }
 
     override fun dispose() {
         timer.stop()
         super.dispose()
-        jcefHtmlPanel.jbCefClient.cefClient.dispose()
-        jsQuery.dispose()
-        jcefHtmlPanel.dispose()
     }
 }
